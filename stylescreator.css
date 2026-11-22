@@ -1,0 +1,249 @@
+/* ==========================================================================
+   Global Variables (Modern Slate & Emerald Editorial Theme)
+   ========================================================================== */
+:root {
+    --bg-base: #0f172a;          /* Deep midnight slate */
+    --bg-accent: #1e293b;        /* Elevated slate */
+    --surface: rgba(30, 41, 59, 0.72);
+    --surface-solid: #1e293b;
+    --accent-primary: #10b981;   /* Crisp emerald green */
+    --accent-soft: rgba(16, 185, 129, 0.15);
+    --text-main: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-subtle: rgba(148, 163, 184, 0.18);
+    --font-heading: 'Fraunces', Georgia, serif;
+    --font-body: 'Source Sans 3', system-ui, sans-serif;
+}
+
+/* ==========================================================================
+   Base & Page Layout
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-body);
+    color: var(--text-main);
+    background-color: var(--bg-base);
+    background-image:
+        radial-gradient(at 15% 20%, rgba(16, 185, 129, 0.14) 0px, transparent 50%),
+        radial-gradient(at 85% 80%, rgba(56, 189, 248, 0.12) 0px, transparent 50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 2.5rem;
+}
+
+/* ==========================================================================
+   Navigation Bar
+   ========================================================================== */
+.navbar {
+    width: 100%;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 0.9rem 2.25rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-brand {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 1.35rem;
+    color: var(--text-main);
+    text-decoration: none;
+    letter-spacing: -0.3px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.nav-brand:hover {
+    color: var(--accent-primary);
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.nav-links li a {
+    display: block;
+    padding: 0.45rem 0.95rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border-radius: 999px; /* Pill-shaped nav items */
+    transition: all 0.2s ease;
+}
+
+.nav-links li a:hover {
+    color: var(--text-main);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+/* Active Page Pill */
+.nav-links li a[aria-current="page"] {
+    background: var(--accent-soft);
+    color: var(--accent-primary);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+}
+
+/* Mobile Toggle Button */
+.nav-toggle {
+    display: none;
+    background: var(--surface-solid);
+    color: var(--text-main);
+    border: 1px solid var(--border-subtle);
+    border-radius: 8px;
+    padding: 0.45rem 0.9rem;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.nav-toggle:hover {
+    border-color: var(--accent-primary);
+}
+
+/* ==========================================================================
+   Creator Profile Card (<form class="creator-card">)
+   ========================================================================== */
+.creator-card {
+    background: var(--surface);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--border-subtle);
+    border-radius: 20px;
+    padding: 2.25rem 2rem;
+    width: 90%;
+    max-width: 360px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    margin: auto 0;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.creator-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(16, 185, 129, 0.4);
+}
+
+/* Photo Container */
+.avatar-ring {
+    width: 108px;
+    height: 108px;
+    margin: 0 auto 1.25rem;
+    border-radius: 24px; /* Modern squircle instead of a standard circle */
+    padding: 4px;
+    background: linear-gradient(135deg, var(--accent-primary), #38bdf8);
+    box-shadow: 0 8px 20px rgba(16, 185, 129, 0.25);
+}
+
+.avatar-ring img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    display: block;
+    background: var(--bg-base);
+}
+
+/* Creator Name */
+.creator-card h2 {
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0 0 1.5rem;
+    letter-spacing: -0.2px;
+}
+
+/* Info Rows */
+.info-box {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.info-box:last-child {
+    margin-bottom: 0;
+}
+
+.info-box small {
+    color: var(--text-secondary);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.info-box p {
+    color: var(--accent-primary);
+    font-weight: 600;
+    font-size: 0.98rem;
+    margin: 0;
+}
+
+/* ==========================================================================
+   Responsive Mobile Navigation
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0.85rem 1.25rem;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        margin-top: 0.9rem;
+        padding-top: 0.75rem;
+        border-top: 1px solid var(--border-subtle);
+        gap: 0.35rem;
+        align-items: stretch;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li a {
+        text-align: center;
+        border-radius: 8px;
+        padding: 0.6rem;
+    }
+
+    .creator-card {
+        margin-top: 2.5rem;
+    }
+}
