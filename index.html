@@ -34,18 +34,29 @@
     </nav>
 
 
-    <section>
-    <div class="position-relative">
-        <h2>Highschool Basketball Varsity</h2>
-        <p> Type your name below to see if you are on the list!</p>
+    <div class="container-fluid mt-3">
+        <div class="container p-5 mt-3 bg-light text-dark rounded">
+            <h1>The Nickname Atlas of Europe</h1><br>
+            <p>Every nation carries a name. Click a country to uncover the title it has been given.</p>
+            <select id="country" class="form-select mb-3">
+            <option>choose a country</option>
+            <option value="the land of pasta and pizza">Italy</option>
+            <option value="the land of croissants and the Eiffel Tower">France</option>
+            <option value="the land of bratwurst and beer">Germany</option>
+            <option value="the land of fiestas and flamenco">Spain</option>
+            <option value="the land of fado and custard tarts">Portugal</option>
+            <option value="the land of windmills and tulips">Netherlands</option>
+            <option value="the land of chocolate and watches">Switzerland</option>
+            <option value="the land of gods and ancient ruins">Greece</option>
+            <option value="the land of fjords and the northern lights">Norway</option>
+            <option value="the land of ABBA and meatballs">Sweden</option>
+            <option value="the land of green hills and Guinness">Ireland</option>
+            <option value="the land of castles and afternoon tea">United Kingdom</option>
+            </select>
+            <button class="btn btn-primary" py-click="search">Click</button>
+            <div id="display" class="mt-4" style="font-size: 24px;"></div>
+        </div>
     </div>
-    </section>
-    <form>
-        <input type="text" id="fname" placeholder="Enter your first name">
-        <input type="text" id="lname" placeholder="Enter your last name">
-        <input type="button" py-click="results"value="Search">
-    </form>
-    <div id="output"></div>
 
     <py-script src=main.py></py-script>
     <footer>
@@ -53,4 +64,5 @@
     </footer>
 
 </body>
+
 </html>
